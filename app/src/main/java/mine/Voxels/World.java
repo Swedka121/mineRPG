@@ -2,6 +2,7 @@ package mine.Voxels;
 
 import mine.App;
 import mine.Engine.Untils.PerlinNoise;
+import org.joml.Random;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,7 +11,7 @@ import java.util.concurrent.*;
 public class World {
     private final HashMap<String, Chunk> chunks = new HashMap<>();
     private ArrayList<Chunk> que = new ArrayList<>();
-    private PerlinNoise noise = new PerlinNoise(121);
+    private PerlinNoise noise = new PerlinNoise(1726491872);
 
     public World() {
     }

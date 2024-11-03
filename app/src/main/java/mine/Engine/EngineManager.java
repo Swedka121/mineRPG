@@ -73,7 +73,7 @@ public class EngineManager {
         int scaleUni = GL46.glGetUniformLocation(this.shaderProgrammId, "scale");
 
         this.world = new World();
-        world.getQue(0,0,0,8);
+        world.getQue(0,0,0,24);
         world.executeQue();
 
         Vector3 pos = camera.getPos();
@@ -103,7 +103,7 @@ public class EngineManager {
             GL46.glUniform1f(scaleUni, 2f);
 
             if (timer == 20) {
-                this.world.getQue((int) camera.getPos().getX(), (int) camera.getPos().getY(), (int) camera.getPos().getZ(), 24);
+                this.world.getQue((int) camera.getPos().getX(), (int) camera.getPos().getY(), (int) camera.getPos().getZ(), 32);
                 this.world.executeQue();
                 timer = 0;
             }

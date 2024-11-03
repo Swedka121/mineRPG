@@ -65,7 +65,7 @@ public class Mesh {
         this.points.addAll(points);
         this.indexes.addAll(indexes);
 
-        this.lastIndex = this.points.size() / 5;
+        this.lastIndex = this.points.size() / 6;
     }
 
     public void updateArrays() {
@@ -106,7 +106,7 @@ public class Mesh {
 
         this.add(mesh.points, newInd);
 
-        this.lastIndex = this.points.size() / 5;
+        this.lastIndex = this.points.size() / 6;
 
         System.out.println("New mesh indexes length: " + this.lastIndex);
 

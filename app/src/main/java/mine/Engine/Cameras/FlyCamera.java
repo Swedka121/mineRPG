@@ -18,6 +18,8 @@ public class FlyCamera extends Camera {
 
     private Vector3f position = new Vector3f(0,0,0);
 
+    private Quaternionf rotation = new Quaternionf();
+
     private GLFWCursorPosCallback cursorPosCallback = new GLFWCursorPosCallback() {
         @Override
         public void invoke(long window, double xpos, double ypos) {
@@ -113,7 +115,7 @@ public class FlyCamera extends Camera {
         if (pitch >= 89.9) pitch = 89.9f;
         if (pitch <= -89.9) pitch = -89.9f;
 
-        Quaternionf rotation = new Quaternionf().rotateYXZ((float) Math.toRadians(yaw), (float) Math.toRadians(pitch), 0.0f);
+        rotation = new Quaternionf().rotateYXZ((float) Math.toRadians(yaw), (float) Math.toRadians(pitch), 0.0f, rotation);
 
         if (this.controls.isForward()) {
             position.add(new Vector3f(0, 0, 1*this.multiplyer)); // Move forward in the local direction
@@ -135,7 +137,7 @@ public class FlyCamera extends Camera {
         }
 
         DataMatrix.translation(position.mul(1f));
-        DataMatrix.rotate(rotation);
+//        DataMatrix.rotate(rotation);
 
         this.setLocalProjectiveMatrix(DataMatrix);
         return DataMatrix;
